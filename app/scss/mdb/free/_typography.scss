@@ -53,6 +53,14 @@
   font-weight: 700;
 }
 
+@font-face {
+	font-family: 'Dharma';
+	src: url('#{$dharma-font-path}DharmaGothicE_Regular_R.eot');
+	src: local('☺'), url('#{$dharma-font-path}DharmaGothicE_Regular_R.woff') format('woff'), url('#{$dharma-font-path}DharmaGothicE_Regular_R.ttf') format('truetype'), url('#{$dharma-font-path}DharmaGothicE_Regular_R.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
