@@ -36,9 +36,107 @@ html {
 #slide-out,
 .navbar {
     background: $black;
-    .logo-wrapper {
-        height: 14rem;
+    @media (max-width: 1024px) {
+        i, a, span {
+            font-size: 2rem;
+        }
     }
+    &.no-admin {
+        background: #fff;
+
+        .search-form {
+            .form-control, input::placeholder {
+                color: map-get($grey, darken-2) !important;
+            }
+        }
+        a {
+            color: $brand-red;
+            span {
+                font-family: $f-dharma;
+                letter-spacing: 1.5px;
+                font-size: 1.6rem;
+                display: inline-block !important;
+                @media (max-width: 1024px) {
+                    font-size: 2rem;
+                }
+            }
+            @media (min-width: 1025px) {
+                color: $brand-red;
+            }
+        }
+        .breadcrumb-dn {
+            margin: 0 auto;
+            h2 {
+                margin-bottom: 0;
+                color: $brand-red;
+                text-align: center;
+            }
+        }
+        .admin {
+            display: none;
+        }
+    }
+    .breadcrumb-dn {
+        h2 {
+            margin-bottom: 0;
+            @media (max-width: 1024px) {
+                font-size: 2rem;
+            }
+        }
+    }
+    .logo-wrapper {
+        height: 9rem;
+    }
+}
+
+.page-item.active .page-link {
+    background: $brand-red;
+    border-color: $brand-red;
+}
+
+.pagination {
+    .btn,
+    .btn-default {
+        background: $brand-red;
+        &:active {
+            background: $brand-red;
+        }
+    }
+    .page-link {
+        font-size: 1.3rem;
+    }
+}
+
+.page-link {
+    color: $white;
+    @media(min-width: 1025px) {
+        color: $black;
+    }
+}
+
+.view-more {
+    font-size: 1.2rem;
+    color: $brand-red;
+}
+
+.navbar {
+    box-shadow: none;
+}
+
+.double-nav .breadcrumb-dn {
+    @media (max-width: 768px) {
+        margin-right: 0 !important;
+    }
+    @media (max-width: 993px) {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 1441px) {
+    .navbar {
+        display: none;
+    }
+    #slide-out {}
 }
 
 .navbar-nav {
@@ -74,7 +172,10 @@ html {
     ;
 }
 
-#top-5 {
+#top-4 {
+    @media (max-width: 767px) {
+        border: none !important;
+    }
     &>h5 {
         font-size: 3rem;
     }
@@ -172,13 +273,30 @@ main {
             }
         }
     }
+    .single-post {
+        &:last-of-type {
+            margin-bottom: 3rem;
+        }
+        .card-title {
+            a {
+                color: $brand-red;
+                font-size: 2rem;
+            }
+        }
+        p {
+            font-size: 1.2rem;
+            @media (max-width: 1024px) {
+                color: $white;
+            }
+        }
+    }
     .card {
         margin-bottom: 1.5rem;
         @media(min-width: 769px) {
-            max-width: 48%;
-            &:nth-child(even) {
-                margin-left: 3%;
-            }
+            // max-width: 48%;
+            // &:nth-child(even) {
+            //     margin-left: 3%;
+            // }
         }
         .btn-action,
         .card-data {
@@ -193,6 +311,7 @@ main {
             }
         }
         .card {
+            box-shadow: none;
             @media(min-width: 769px) {
                 max-width: 100%;
             }
@@ -219,15 +338,38 @@ main {
             color: $brand-red;
             font-size: 2.5rem;
         }
+        time {
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+            display: block;
+            color: map-get($grey, lighten-1);
+        }
         p {
-            font-size: 1.3rem;
-            color: $black;
+            font-size: 1.5rem;
+            color: #4f4f4f;
             @media (max-width: 768px) {
                 color: #eee !important;
             }
         }
         h5 {
             font-size: 2.2rem;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        blockquote {
+            margin-right: 3rem;
+            margin-left: 3rem;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            padding: .5rem 1rem;
+            border-left: .25rem solid #eceeef;
+            @media (max-width: 767px) {
+                margin-left: 0.25rem;
+                margin-right: 0.25rem;
+            }
+            p {
+                margin-bottom: 0;
+            }
         }
     }
 }
@@ -240,6 +382,12 @@ main {
     }
 }
 
+.invisible-row {
+    @media (max-width: 767px) {
+        margin: 0;
+    }
+}
+
 #disclaimer-sidebar-section,
 #newsletter-sidebar-section,
 #you-might-like-sidebar-section {
@@ -248,14 +396,18 @@ main {
     button {
         font-size: 1.4rem;
     }
-
     @media (max-width: 768px) {
         color: #eee;
-
         .card {
             box-shadow: none;
             background: none;
         }
+    }
+    time {
+        font-size: 1rem;
+        font-family: 'Roboto', sans-serif;
+        display: block;
+        color: map-get($grey, lighten-1);
     }
 }
 
@@ -297,5 +449,13 @@ footer {
     &.row {
         margin-left: 0;
         margin-right: 0;
+    }
+}
+
+.double-nav {
+    a {
+        span {
+            display: none;
+        }
     }
 }

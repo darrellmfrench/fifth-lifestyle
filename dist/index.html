@@ -12,13 +12,18 @@
     <link rel="stylesheet" href="css/fifth.min.css">
 </head>
 
-<body class="fixed-sn">
-
+<body class="fixed-sn animated">
+    
+    <div class="fixed-action-btn smooth-scroll" style="bottom: 45px; right: 24px;">
+        <a href="#top-section" class="btn-floating red">
+            <i class="fa fa-arrow-up"></i>
+        </a>
+    </div>
 
     <!--Double navigation-->
     <header>
         <!-- Sidebar navigation -->
-        <div id="slide-out" class="side-nav sn-bg-4 fixed mdb-sidenav" style="transform: translateX(-100%);">
+        <div id="slide-out" class="no-admin side-nav sn-bg-4 fixed mdb-sidenav" style="transform: translateX(-100%);">
             <ul class="custom-scrollbar list-unstyled" style="max-height:100vh;">
                 <!-- Logo -->
                 <li>
@@ -153,7 +158,7 @@
         </div>
         <!--/. Sidebar navigation -->
         <!-- Navbar -->
-        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+        <nav id="navbar" class="no-admin navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
             <!-- SideNav slide-out button -->
             <div class="float-left">
                 <a href="#" data-activates="slide-out" class="button-collapse">
@@ -166,7 +171,9 @@
                     <span></span>
                 </h2>
             </div>
-            <ul class="nav navbar-nav nav-flex-icons ml-auto">
+
+            <!-- MAXNOTE: ONLY VISIBLE WHEN LOGGED IN -->
+            <ul class="d-none nav navbar-nav nav-flex-icons ml-auto">
                 <li class="nav-item">
                     <a class="nav-link waves-effect waves-light">
                         <i class="fa fa-envelope"></i>
@@ -197,22 +204,25 @@
                     </div>
                 </li>
             </ul>
+            <!--/ MAXNOTE: ONLY VISIBLE WHEN LOGGED IN -->
         </nav>
         <!-- /.Navbar -->
     </header>
     <!--/.Double navigation-->
 
     <!--Main Layout-->
-    <main>
+    <main id="home-and-category">
         <div class="container-fluid mt-3 row">
-            <section id="advertisement-head" class="row col-12 d-flex align-content-center justify-content-middle">
+            <section id="advertisement-head" class="row col-12 d-flex align-content-center justify-content-middle mx-auto">
                 <h2 class="col-12 text-center">Advertise here</h2>
+                <img src="http://placehold.it/728x90" class="img-fluid mx-auto" />
             </section>
-            <!-- Top 8 Posts -->
-            <section id="top-8" class="row border border-left-0 border-right-0 border-top-0 mb-5">
+            <!-- Top 5 Posts -->
+            <section id="top-4" class="row border border-left-0 border-right-0 border-top-0 mb-5">
                 <!--Zoom effect-->
                 <h5 class="col-12">What's on 🔥</h5>
-                <div class="view overlay hm-zoom hm-red-strong px-0 col-lg-7">
+                <!-- MAXNOTE: THESE WILL BE THE TOP 5 POSTS WITHIN THE LAST 2 WEEKS. ADD EXCEPTION TO SHOW POST MARKED AS "USER PICKS" AS 1ST/BIG IMAGE. FOLLOWED BY THE TOP 4 POSTS -->
+                <div class="view overlay hm-zoom hm-red-strong px-0 col-lg-7 animated fadeIn" data-wow-delay="0.2s">
                     <a href="#">
                         <picture class="img-fluid">
                             <source media="(min-width: 1200px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.natural.jpg?cdnv=3.34"
@@ -230,8 +240,8 @@
                         </div>
                     </a>
                 </div>
-                <ul class="list-unstyled col-lg-5">
-                    <li class="media">
+                <ul class="list-unstyled col-lg-5 d-none d-md-block">
+                    <li class="media wow fadeInDown" data-wow-delay="0.2s">
                         <a href="#">
                             <img class="d-flex mr-3" src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.medthumb.jpg?cdnv=3.34"
                                 alt="Generic placeholder image">
@@ -245,7 +255,7 @@
                             lacinia congue felis in faucibus.
                         </div>
                     </li>
-                    <li class="media">
+                    <li class="media wow fadeInDown" data-wow-delay="0.6s">
                         <a href="#">
                             <img class="d-flex mr-3" src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.medthumb.jpg?cdnv=3.34"
                                 alt="Generic placeholder image">
@@ -259,7 +269,7 @@
                             lacinia congue felis in faucibus.
                         </div>
                     </li>
-                    <li class="media">
+                    <li class="media wow fadeInDown" data-wow-delay="1s">
                         <a href="#">
                             <img class="d-flex mr-3" src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.medthumb.jpg?cdnv=3.34"
                                 alt="Generic placeholder image">
@@ -273,7 +283,7 @@
                             lacinia congue felis in faucibus.
                         </div>
                     </li>
-                    <li class="media">
+                    <li class="media wow fadeInDown" data-wow-delay="1.4s">
                         <a href="#">
                             <img class="d-flex mr-3" src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.medthumb.jpg?cdnv=3.34"
                                 alt="Generic placeholder image">
@@ -289,331 +299,78 @@
                     </li>
                 </ul>
             </section>
-            <!-- / Top 8 Posts -->
+            <!-- / Top 5 Posts -->
 
-            <section id="main" class="col-md-8">
-                <h4 class="font-bold">
-                    <strong>LATESTS NEWS</strong>
-                </h4>
-                <hr class="row red title-hr">
-                <div class="row latest-news">
-                    <!--Card-->
-                    <div class="card col-md-6 px-0">
+            <section id="main" class="col-lg-9">
+                <!-- MAXNOTE: SHOW THE LATEST 20 POSTS -->
+                <div class="row invisible-row">
+                <!-- POST EXAMPLE -->
+                <div class="single-post wow fadeInUp row" data-wow-duration="0.8s">
+                    
+                        <!-- Grid row -->
+                        <div class="row mb-4">
+                            <div class="col-4">
 
-                        <!--Card image-->
-                        <div class="view overlay hm-white-slight">
-                            <picture class="img-fluid">
-                                <source media="(min-width: 1200px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.natural.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <source media="(min-width: 768px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.hugethumb.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <source media="(min-width: 320px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.hugethumb.jpg?cdnv=3.34" class="img-fluid"
-                                    alt="zoom" />
-                            </picture>
-                            <a href="#">
-                                <div class="mask"></div>
-                            </a>
-                        </div>
-                        <!--/.Card image-->
-
-                        <!--Button-->
-                        <a href="#" class="btn-floating btn-action">
-                            <i class="fa fa-chevron-right"></i>
-                        </a>
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">Card title</h4>
-                            <hr>
-                            <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                        <!--/.Card content-->
-
-                        <!-- Card footer -->
-                        <div class="card-data">
-                            <ul class="px-0">
-                                <li>
-                                    <i class="fa fa-clock-o"></i> 05/10/2015</li>
-                                <li>
+                                <!-- Image -->
+                                <div class="view overlay hm-white-slight rounded z-depth-1-half">
+                                        <picture class="img-fluid z-depth-1">
+                                            <source media="(min-width: 1200px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.natural.jpg?cdnv=3.34"
+                                                class="img-fluid z-depth-1">
+                                            <source media="(min-width: 600px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.hugethumb.jpg?cdnv=3.34"
+                                                class="img-fluid z-depth-1">
+                                            <source media="(min-width: 320px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.medthumb.jpg?cdnv=3.34"
+                                                class="img-fluid z-depth-1">
+                                            <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.hugethumb.jpg?cdnv=3.34" class="img-fluid z-depth-1"
+                                                alt="zoom" />
+                                        </picture>
                                     <a href="#">
-                                        <i class="fa fa-user"></i>Montez French</a>
-                                </li>
-                            </ul>
+                                        <div class="mask waves-light waves-effect waves-light"></div>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Excerpt -->
+                            <div class="col-8 pl-0">
+                                    <h3 class="card-title"><a href="#">Card title</a></h3>
+
+                                <div class="post-data">
+                                    <p class="font-small grey-text mb-0">
+                                        <time datetime="2018-02-14 20:00" id="date-posted"><i class="fa fa-clock-o"></i> 02/14/2018</time>
+                                        
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                            </div>
+                            <!--/ Excerpt -->
                         </div>
-                        <!-- Card footer -->
-
-                    </div>
-                    <!--/.Card-->
-                    <!--Card-->
-                    <div class="card col-md-6 px-0">
-
-                        <!--Card image-->
-                        <div class="view overlay hm-white-slight">
-                            <picture class="img-fluid">
-                                <source media="(min-width: 1200px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.natural.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <source media="(min-width: 768px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.hugethumb.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <source media="(min-width: 320px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.hugethumb.jpg?cdnv=3.34" class="img-fluid"
-                                    alt="zoom" />
-                            </picture>
-                            <a href="#">
-                                <div class="mask"></div>
-                            </a>
-                        </div>
-                        <!--/.Card image-->
-
-                        <!--Button-->
-                        <a href="#" class="btn-floating btn-action">
-                            <i class="fa fa-chevron-right"></i>
-                        </a>
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">Card title</h4>
-                            <hr>
-                            <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                        <!--/.Card content-->
-
-                        <!-- Card footer -->
-                        <div class="card-data">
-                            <ul class="px-0">
-                                <li>
-                                    <i class="fa fa-clock-o"></i> 05/10/2015</li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-user"></i>Montez French</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Card footer -->
-
-                    </div>
-                    <!--/.Card-->
-                    <!--Card-->
-                    <div class="card col-md-6 px-0">
-
-                        <!--Card image-->
-                        <div class="view overlay hm-white-slight">
-                            <picture class="img-fluid">
-                                <source media="(min-width: 1200px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.natural.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <source media="(min-width: 768px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.hugethumb.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <source media="(min-width: 320px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.hugethumb.jpg?cdnv=3.34" class="img-fluid"
-                                    alt="zoom" />
-                            </picture>
-                            <a href="#">
-                                <div class="mask"></div>
-                            </a>
-                        </div>
-                        <!--/.Card image-->
-
-                        <!--Button-->
-                        <a href="#" class="btn-floating btn-action">
-                            <i class="fa fa-chevron-right"></i>
-                        </a>
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">Card title</h4>
-                            <hr>
-                            <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                        <!--/.Card content-->
-
-                        <!-- Card footer -->
-                        <div class="card-data">
-                            <ul class="px-0">
-                                <li>
-                                    <i class="fa fa-clock-o"></i> 05/10/2015</li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-user"></i>Montez French</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Card footer -->
-
-                    </div>
-                    <!--/.Card-->
-                    <!--Card-->
-                    <div class="card col-md-6 px-0">
-
-                        <!--Card image-->
-                        <div class="view overlay hm-white-slight">
-                            <picture class="img-fluid">
-                                <source media="(min-width: 1200px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.natural.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <source media="(min-width: 768px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.hugethumb.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <source media="(min-width: 320px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.hugethumb.jpg?cdnv=3.34" class="img-fluid"
-                                    alt="zoom" />
-                            </picture>
-                            <a href="#">
-                                <div class="mask"></div>
-                            </a>
-                        </div>
-                        <!--/.Card image-->
-
-                        <!--Button-->
-                        <a href="#" class="btn-floating btn-action">
-                            <i class="fa fa-chevron-right"></i>
-                        </a>
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">Card title</h4>
-                            <hr>
-                            <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                        <!--/.Card content-->
-
-                        <!-- Card footer -->
-                        <div class="card-data">
-                            <ul class="px-0">
-                                <li>
-                                    <i class="fa fa-clock-o"></i> 05/10/2015</li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-user"></i>Montez French</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Card footer -->
-
-                    </div>
-                    <!--/.Card-->
-                    <!--Card-->
-                    <div class="card col-md-6 px-0">
-
-                        <!--Card image-->
-                        <div class="view overlay hm-white-slight">
-                            <picture class="img-fluid">
-                                <source media="(min-width: 1200px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.natural.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <source media="(min-width: 768px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.hugethumb.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <source media="(min-width: 320px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.hugethumb.jpg?cdnv=3.34" class="img-fluid"
-                                    alt="zoom" />
-                            </picture>
-                            <a href="#">
-                                <div class="mask"></div>
-                            </a>
-                        </div>
-                        <!--/.Card image-->
-
-                        <!--Button-->
-                        <a href="#" class="btn-floating btn-action">
-                            <i class="fa fa-chevron-right"></i>
-                        </a>
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">Card title</h4>
-                            <hr>
-                            <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                        <!--/.Card content-->
-
-                        <!-- Card footer -->
-                        <div class="card-data">
-                            <ul class="px-0">
-                                <li>
-                                    <i class="fa fa-clock-o"></i> 05/10/2015</li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-user"></i>Montez French</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Card footer -->
-
-                    </div>
-                    <!--/.Card-->
-                    <!--Card-->
-                    <div class="card col-md-6 px-0">
-
-                        <!--Card image-->
-                        <div class="view overlay hm-white-slight">
-                            <picture class="img-fluid">
-                                <source media="(min-width: 1200px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.natural.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <source media="(min-width: 768px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.hugethumb.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <source media="(min-width: 320px)" srcset="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34"
-                                    class="img-fluid">
-                                <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.hugethumb.jpg?cdnv=3.34" class="img-fluid"
-                                    alt="zoom" />
-                            </picture>
-                            <a href="#">
-                                <div class="mask"></div>
-                            </a>
-                        </div>
-                        <!--/.Card image-->
-
-                        <!--Button-->
-                        <a href="#" class="btn-floating btn-action">
-                            <i class="fa fa-chevron-right"></i>
-                        </a>
-
-                        <!--Card content-->
-                        <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">Card title</h4>
-                            <hr>
-                            <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                        <!--/.Card content-->
-
-                        <!-- Card footer -->
-                        <div class="card-data">
-                            <ul class="px-0">
-                                <li>
-                                    <i class="fa fa-clock-o"></i> 05/10/2015</li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-user"></i>Montez French</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Card footer -->
-
-                    </div>
-                    <!--/.Card-->
+                        <!--/ Grid row -->
                 </div>
+                <!--/ POST EXAMPLE -->
+            
+            </div>
+                
+                
+
+                <nav>
+                <ul class="pagination pagination-lg justify-content-center">
+                    
+                    <li class="page-item w-100">
+                    <a class="page-link btn btn-danger btn-block" href="#" aria-label="Next">
+                        <span aria-hidden="true">Load More</span>
+                        <span class="sr-only">LOAD MORE</span>
+                    </a>
+                    </li>
+                </ul>
+                </nav>
             </section>
 
-            <section id="sidebar" class="col-md-4">
+            <section id="sidebar" class="col-lg-3">
                 <h4 class="font-bold text-right">
                     <strong>Partnerships</strong>
                 </h4>
                 <hr class="row red title-hr">
 
-                <!-- Popular posts -->
-                <section id="partnerships" class="mt-2">
+                <!-- Partnerships Carousel -->
+                <section id="partnerships-sidebar-section" class="mt-2">
 
                     <!-- Grid row -->
                     <div class="row">
@@ -693,10 +450,10 @@
                     <!-- Grid row -->
 
                 </section>
-                <!-- Popular posts -->
+                <!-- Partnerships Carousel -->
 
                 <!-- Section: Newsletter -->
-                <section class="section mt-5">
+                <section id="newsletter-sidebar-section" class="section mt-5">
 
                     <h5 class="dark-grey-text font-bold">
                         <strong>NEWSLETTER</strong>
@@ -715,32 +472,45 @@
                             </div>
 
                             <!-- Body -->
-                            <p>We'll write rarely, but only the best content.</p>
+                            <p>Start your weekend right with the latest news from Fifth Lifestyle.</p>
 
                             <!-- Body -->
-                            <div class="md-form">
-                                <i class="fa fa-user prefix grey-text"></i>
-                                <input type="text" id="form3" class="form-control">
-                                <label for="form3">Your name</label>
-                            </div>
+                            <form>
+                                <div class="md-form">
+                                    <i class="fa fa-user prefix grey-text"></i>
+                                    <input type="text" id="form3" class="form-control">
+                                    <label for="form3">Your name</label>
+                                </div>
 
-                            <div class="md-form">
-                                <i class="fa fa-envelope prefix grey-text"></i>
-                                <input type="text" id="form2" class="form-control">
-                                <label for="form2">Your email</label>
-                            </div>
+                                <div class="md-form">
+                                    <i class="fa fa-envelope prefix grey-text"></i>
+                                    <input type="text" id="form2" class="form-control">
+                                    <label for="form2">Your email</label>
+                                </div>
 
-                            <div class="text-center">
-                                <button class="btn btn-indigo waves-effect waves-light">Send</button>
-                            </div>
-
+                                <div class="text-center">
+                                    <button class="btn btn-indigo waves-effect waves-light">Send</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
 
                 </section>
                 <!--/ Section: Newsletter -->
+                <!-- Section: Ad -->
+                <section id="categories-sidebar-section" class="section mt-5">
+
+                        <h5 class="dark-grey-text font-bold">
+                            <strong>Advertisement</strong>
+                        </h5>
+                        <hr>
+    
+                        <img src="http://placehold.it/350x350" class="img-fluid mx-auto d-block" />
+                    </section>
+                    <!-- Section: Ad -->
+
                 <!-- Section: Categories -->
-                <section class="section mt-5">
+                <section id="categories-sidebar-section" class="section mt-5">
 
                     <h5 class="dark-grey-text font-bold">
                         <strong>CATEGORIES</strong>
@@ -750,34 +520,31 @@
                     <ul class="list-group z-depth-1">
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <a href="#">Music</a>
-                            <span class="badge badge-indigo badge-pill">4</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <a href="#">Videos</a>
-                            <span class="badge badge-indigo badge-pill">2</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <a href="#">Fashion</a>
-                            <span class="badge badge-indigo badge-pill">1</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <a href="#">Tech</a>
-                            <span class="badge badge-indigo badge-pill">2</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <a href="#">Sports</a>
-                            <span class="badge badge-indigo badge-pill">1</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <a href="#">Interviews</a>
-                            <span class="badge badge-indigo badge-pill">2</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <a href="#">Personal Finance</a>
                         </li>
                     </ul>
                 </section>
                 <!-- Section: Categories -->
 
                 <!-- Section: Disclaimer -->
-                <section class="section mt-5">
+                <section id="disclaimer-sidebar-section" class="section mt-5">
 
                     <h5 class="dark-grey-text font-bold">
                         <strong>Disclaimer</strong>
@@ -803,26 +570,25 @@
 
 
 
-                <!-- Section: Featured posts -->
-                <section class="section widget-content mt-5">
-
-                    <!-- Heading -->
+                <!-- Section: You Might Light posts -->
+                <section id="you-might-like-sidebar-section" class="section widget-content mt-5">
                     <h5 class="dark-grey-text font-bold">
-                        <strong>FEATURED POSTS</strong>
+                        <strong>You Might Also Like</strong>
                     </h5>
                     <hr>
-
-                    <!--/ Heading -->
+                    <!--/ Card -->
                     <div class="card card-body pb-0">
                         <div class="single-post">
 
                             <!-- Grid row -->
-                            <div class="row">
-                                <div class="col-4">
+                            <div class="row mb-4">
+                                <div class="col-5">
 
                                     <!-- Image -->
                                     <div class="view overlay hm-white-slight">
-                                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(121).jpg" class="img-fluid" alt="sample image">
+
+                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
+                                            alt="zoom" />
                                         <a>
                                             <div class="mask waves-light waves-effect waves-light"></div>
                                         </a>
@@ -830,55 +596,17 @@
                                 </div>
 
                                 <!-- Excerpt -->
-                                <div class="col-8">
-                                    <div class="post-data">
-                                        <p class="font-small mb-0">
-                                            <i class="fa fa-clock-o"></i> 25/08/2016</p>
-                                        <a>
-                                            <i class="fa fa-comments-o"></i> 114</a>
-                                    </div>
-
-                                    <h6>
+                                <div class="col-7">
+                                    <h6 class="mt-0 font-small">
                                         <a>
                                             <strong>Title of the news</strong>
                                         </a>
                                     </h6>
 
-                                </div>
-                                <!--/ Excerpt -->
-                            </div>
-                            <!--/ Grid row -->
-                        </div>
-
-                        <div class="single-post">
-                            <!--  Grid row -->
-                            <div class="row">
-                                <!-- Image -->
-                                <div class="col-4">
-                                    <div class="view overlay hm-white-slight">
-                                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(30).jpg" class="img-fluid" alt="sample image">
-                                        <a>
-                                            <div class="mask waves-light waves-effect waves-light"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <!--/ Image -->
-
-                                <!-- Excerpt -->
-                                <div class="col-8">
                                     <div class="post-data">
-                                        <p class="font-small mb-0">
-                                            <i class="fa fa-clock-o"></i> 21/08/2016</p>
-                                        <a>
-                                            <i class="fa fa-comments-o"></i> 96</a>
+                                        <p class="font-small grey-text mb-0">
+                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
                                     </div>
-
-                                    <h6>
-                                        <a>
-                                            <strong>This is title of the news</strong>
-                                        </a>
-                                    </h6>
-
                                 </div>
                                 <!--/ Excerpt -->
                             </div>
@@ -886,34 +614,34 @@
                         </div>
 
                         <div class="single-post">
+
                             <!-- Grid row -->
-                            <div class="row">
-                                <!-- Image -->
-                                <div class="col-4">
+                            <div class="row mb-4">
+                                <div class="col-5">
+
+                                    <!-- Image -->
                                     <div class="view overlay hm-white-slight">
-                                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(118).jpg" class="img-fluid" alt="sample image">
+
+                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
+                                            alt="zoom" />
                                         <a>
                                             <div class="mask waves-light waves-effect waves-light"></div>
                                         </a>
                                     </div>
                                 </div>
-                                <!--/ Image -->
 
                                 <!-- Excerpt -->
-                                <div class="col-8">
-                                    <div class="post-data">
-                                        <p class="font-small mb-0">
-                                            <i class="fa fa-clock-o"></i> 19/07/2016</p>
+                                <div class="col-7">
+                                    <h6 class="mt-0 font-small">
                                         <a>
-                                            <i class="fa fa-comments-o"></i> 105</a>
-                                    </div>
-
-                                    <h6>
-                                        <a>
-                                            <strong>This is title of the news</strong>
+                                            <strong>Title of the news</strong>
                                         </a>
                                     </h6>
 
+                                    <div class="post-data">
+                                        <p class="font-small grey-text mb-0">
+                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
+                                    </div>
                                 </div>
                                 <!--/ Excerpt -->
                             </div>
@@ -921,34 +649,34 @@
                         </div>
 
                         <div class="single-post">
+
                             <!-- Grid row -->
-                            <div class="row">
-                                <!-- Image -->
-                                <div class="col-4">
+                            <div class="row mb-4">
+                                <div class="col-5">
+
+                                    <!-- Image -->
                                     <div class="view overlay hm-white-slight">
-                                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(124).jpg" class="img-fluid" alt="sample image">
+
+                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
+                                            alt="zoom" />
                                         <a>
                                             <div class="mask waves-light waves-effect waves-light"></div>
                                         </a>
                                     </div>
                                 </div>
-                                <!--/ Image -->
 
                                 <!-- Excerpt -->
-                                <div class="col-8">
-                                    <div class="post-data">
-                                        <p class="font-small mb-0">
-                                            <i class="fa fa-clock-o"></i> 26/06/2016</p>
+                                <div class="col-7">
+                                    <h6 class="mt-0 font-small">
                                         <a>
-                                            <i class="fa fa-comments-o"></i> 82</a>
-                                    </div>
-
-                                    <h6>
-                                        <a>
-                                            <strong>This is title of the news</strong>
+                                            <strong>Title of the news</strong>
                                         </a>
                                     </h6>
 
+                                    <div class="post-data">
+                                        <p class="font-small grey-text mb-0">
+                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
+                                    </div>
                                 </div>
                                 <!--/ Excerpt -->
                             </div>
@@ -956,34 +684,34 @@
                         </div>
 
                         <div class="single-post">
+
                             <!-- Grid row -->
-                            <div class="row">
-                                <!-- Image -->
-                                <div class="col-4">
+                            <div class="row mb-4">
+                                <div class="col-5">
+
+                                    <!-- Image -->
                                     <div class="view overlay hm-white-slight">
-                                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(85).jpg" class="img-fluid" alt="sample image">
+
+                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
+                                            alt="zoom" />
                                         <a>
                                             <div class="mask waves-light waves-effect waves-light"></div>
                                         </a>
                                     </div>
                                 </div>
-                                <!--/ Image -->
 
                                 <!-- Excerpt -->
-                                <div class="col-8">
-                                    <div class="post-data">
-                                        <p class="font-small mb-0">
-                                            <i class="fa fa-clock-o"></i> 26/06/2016</p>
+                                <div class="col-7">
+                                    <h6 class="mt-0 font-small">
                                         <a>
-                                            <i class="fa fa-comments-o"></i> 82</a>
-                                    </div>
-
-                                    <h6>
-                                        <a>
-                                            <strong>This is title of the news</strong>
+                                            <strong>Title of the news</strong>
                                         </a>
                                     </h6>
 
+                                    <div class="post-data">
+                                        <p class="font-small grey-text mb-0">
+                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
+                                    </div>
                                 </div>
                                 <!--/ Excerpt -->
                             </div>
@@ -991,49 +719,351 @@
                         </div>
 
                         <div class="single-post">
+
                             <!-- Grid row -->
-                            <div class="row">
-                                <!-- Image -->
-                                <div class="col-4">
+                            <div class="row mb-4">
+                                <div class="col-5">
+
+                                    <!-- Image -->
                                     <div class="view overlay hm-white-slight">
-                                        <img src="http://mdbootstrap.com/img/Photos/Horizontal/People/4-col/img%20(119).jpg" class="img-fluid" alt="sample image">
+
+                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
+                                            alt="zoom" />
                                         <a>
                                             <div class="mask waves-light waves-effect waves-light"></div>
                                         </a>
                                     </div>
                                 </div>
-                                <!--/ Image -->
 
                                 <!-- Excerpt -->
-                                <div class="col-8">
-                                    <div class="post-data">
-                                        <p class="font-small mb-0">
-                                            <i class="fa fa-clock-o"></i> 26/06/2016</p>
+                                <div class="col-7">
+                                    <h6 class="mt-0 font-small">
                                         <a>
-                                            <i class="fa fa-comments-o"></i> 82</a>
-                                    </div>
-
-                                    <h6>
-                                        <a>
-                                            <strong>This is title of the news</strong>
+                                            <strong>Title of the news</strong>
                                         </a>
                                     </h6>
 
+                                    <div class="post-data">
+                                        <p class="font-small grey-text mb-0">
+                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
+                                    </div>
                                 </div>
-                                <!--/Excerpt -->
+                                <!--/ Excerpt -->
                             </div>
-                            <!--/Grid row -->
+                            <!--/ Grid row -->
+                        </div>
+
+                        <div class="single-post">
+
+                            <!-- Grid row -->
+                            <div class="row mb-4">
+                                <div class="col-5">
+
+                                    <!-- Image -->
+                                    <div class="view overlay hm-white-slight">
+
+                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
+                                            alt="zoom" />
+                                        <a>
+                                            <div class="mask waves-light waves-effect waves-light"></div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Excerpt -->
+                                <div class="col-7">
+                                    <h6 class="mt-0 font-small">
+                                        <a>
+                                            <strong>Title of the news</strong>
+                                        </a>
+                                    </h6>
+
+                                    <div class="post-data">
+                                        <p class="font-small grey-text mb-0">
+                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
+                                    </div>
+                                </div>
+                                <!--/ Excerpt -->
+                            </div>
+                            <!--/ Grid row -->
+                        </div>
+
+                        <div class="single-post">
+
+                            <!-- Grid row -->
+                            <div class="row mb-4">
+                                <div class="col-5">
+
+                                    <!-- Image -->
+                                    <div class="view overlay hm-white-slight">
+
+                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
+                                            alt="zoom" />
+                                        <a>
+                                            <div class="mask waves-light waves-effect waves-light"></div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Excerpt -->
+                                <div class="col-7">
+                                    <h6 class="mt-0 font-small">
+                                        <a>
+                                            <strong>Title of the news</strong>
+                                        </a>
+                                    </h6>
+
+                                    <div class="post-data">
+                                        <p class="font-small grey-text mb-0">
+                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
+                                    </div>
+                                </div>
+                                <!--/ Excerpt -->
+                            </div>
+                            <!--/ Grid row -->
+                        </div>
+
+                        <div class="single-post">
+
+                            <!-- Grid row -->
+                            <div class="row mb-4">
+                                <div class="col-5">
+
+                                    <!-- Image -->
+                                    <div class="view overlay hm-white-slight">
+
+                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
+                                            alt="zoom" />
+                                        <a>
+                                            <div class="mask waves-light waves-effect waves-light"></div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Excerpt -->
+                                <div class="col-7">
+                                    <h6 class="mt-0 font-small">
+                                        <a>
+                                            <strong>Title of the news</strong>
+                                        </a>
+                                    </h6>
+
+                                    <div class="post-data">
+                                        <p class="font-small grey-text mb-0">
+                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
+                                    </div>
+                                </div>
+                                <!--/ Excerpt -->
+                            </div>
+                            <!--/ Grid row -->
+                        </div>
+
+                        <div class="single-post">
+
+                            <!-- Grid row -->
+                            <div class="row mb-4">
+                                <div class="col-5">
+
+                                    <!-- Image -->
+                                    <div class="view overlay hm-white-slight">
+
+                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
+                                            alt="zoom" />
+                                        <a>
+                                            <div class="mask waves-light waves-effect waves-light"></div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Excerpt -->
+                                <div class="col-7">
+                                    <h6 class="mt-0 font-small">
+                                        <a>
+                                            <strong>Title of the news</strong>
+                                        </a>
+                                    </h6>
+
+                                    <div class="post-data">
+                                        <p class="font-small grey-text mb-0">
+                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
+                                    </div>
+                                </div>
+                                <!--/ Excerpt -->
+                            </div>
+                            <!--/ Grid row -->
+                        </div>
+
+                        <div class="single-post">
+
+                            <!-- Grid row -->
+                            <div class="row mb-4">
+                                <div class="col-5">
+
+                                    <!-- Image -->
+                                    <div class="view overlay hm-white-slight">
+
+                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
+                                            alt="zoom" />
+                                        <a>
+                                            <div class="mask waves-light waves-effect waves-light"></div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Excerpt -->
+                                <div class="col-7">
+                                    <h6 class="mt-0 font-small">
+                                        <a>
+                                            <strong>Title of the news</strong>
+                                        </a>
+                                    </h6>
+
+                                    <div class="post-data">
+                                        <p class="font-small grey-text mb-0">
+                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
+                                    </div>
+                                </div>
+                                <!--/ Excerpt -->
+                            </div>
+                            <!--/ Grid row -->
                         </div>
                     </div>
                 </section>
-                <!--/ Section: Featured posts -->
+                <!--/ Section: You Might Like posts -->
 
 
             </section>
         </div>
     </main>
     <!--Main Layout-->
+    <footer class="page-footer stylish-color-dark">
 
+        <!--Footer Links-->
+        <div class="container-fluid">
+
+            <!-- Footer links -->
+            <div class="row text-center text-md-left mt-3 pb-3">
+
+                <!--Grid column-->
+                <div class="col-md-3 col-lg-3 col-xl-3 mr-auto mt-3">
+                    <h6 class="title mb-4 font-bold">FIFTH LIFESTYLE</h6>
+                    <p>Created in late 2017 to be a platform that would provide a safe for work environment for music lovers
+                        to enjoy the latest in hip-hop culture. Priding ourselves in delivering new content daily, we are
+                        becoming one of the premiere destinations for all media.</p>
+                </div>
+                <!--/.Grid column-->
+
+                <hr class="w-100 clearfix d-md-none">
+
+                <!--Grid column-->
+                <div class="col-md-2 col-lg-2 col-xl-2 mr-auto mt-3">
+                    <h6 class="title mb-4 font-bold">Products</h6>
+                    <p>
+                        <a href="#!">Shop</a>
+                    </p>
+                    <p>
+                        <a href="#!">M.E.</a>
+                    </p>
+                    <p>
+                        <a href="#!">Wordplay Collection</a>
+                    </p>
+                </div>
+                <!--/.Grid column-->
+
+                <hr class="w-100 clearfix d-md-none">
+
+                <!--Grid column-->
+                <div class="col-md-3 col-lg-2 col-xl-2 mr-auto mt-3">
+                    <h6 class="title mb-4 font-bold">Useful links</h6>
+                    <p>
+                        <a href="#!">Advertise with Us</a>
+                    </p>
+                    <p>
+                        <a href="#!">Become an Contributor</a>
+                    </p>
+                    <p>
+                        <a href="#!">Submit Music</a>
+                    </p>
+                    <p>
+                        <a href="#!">About Us</a>
+                    </p>
+                    <p>
+                        <a href="#!">Privacy Policy</a>
+                    </p>
+                </div>
+                <!--/.Grid column-->
+
+                <hr class="w-100 clearfix d-md-none">
+
+                <!--Grid column-->
+                <div class="col-md-4 col-lg-3 col-xl-3 mr-auto mt-3">
+                    <h6 class="title mb-4 font-bold">Contact</h6>
+                    <p>
+                        <i class="fa fa-home mr-3"></i> Los Angeles, CA 93008, US</p>
+                    <p>
+                        <i class="fa fa-envelope mr-3"></i> contact@fifth.life</p>
+                </div>
+                <!--/.Grid column-->
+
+            </div>
+            <!-- Footer links -->
+
+            <hr>
+
+            <div class="row py-3 d-flex align-items-center">
+
+                <!--Grid column-->
+                <div class="col-md-8 col-lg-9">
+
+                    <!--Copyright-->
+                    <p class="text-center text-md-left grey-text">© 2018 Copyright:
+                        <a href="/">
+                            <strong> Fifth Lifestyle, LLC</strong>
+                        </a>
+                    </p>
+                    <!--/.Copyright-->
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-4 col-lg-3 ml-lg-0">
+
+                    <!--Social buttons-->
+                    <div class="social-section text-center mr-auto text-md-left">
+                        <ul>
+                            <li>
+                                <a class="btn-floating btn-sm rgba-white-slight mr-xl-4 waves-effect waves-light">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="btn-floating btn-sm rgba-white-slight mr-xl-4 waves-effect waves-light">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="btn-floating btn-sm rgba-white-slight mr-xl-4 waves-effect waves-light">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="btn-floating btn-sm rgba-white-slight mr-xl-4 waves-effect waves-light">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/.Social buttons-->
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+
+        </div>
+
+    </footer>
     <div class="drag-target" style="left: 0px; touch-action: pan-y; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
 
     <div class="hiddendiv common"></div>

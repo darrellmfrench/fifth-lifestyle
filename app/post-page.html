@@ -23,7 +23,7 @@
     <!--Double navigation-->
     <header>
         <!-- Sidebar navigation -->
-        <div id="slide-out" class="side-nav sn-bg-4 fixed mdb-sidenav" style="transform: translateX(-100%);">
+        <div id="slide-out" class="no-admin side-nav sn-bg-4 fixed mdb-sidenav" style="transform: translateX(-100%);">
             <ul class="custom-scrollbar list-unstyled" style="max-height:100vh;">
                 <!-- Logo -->
                 <li>
@@ -158,11 +158,11 @@
         </div>
         <!--/. Sidebar navigation -->
         <!-- Navbar -->
-        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+        <nav id="navbar" class="no-admin navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
             <!-- SideNav slide-out button -->
             <div class="float-left">
                 <a href="#" data-activates="slide-out" class="button-collapse">
-                    <i class="fa fa-bars"></i>
+                    <i class="fa fa-bars"></i> <span>MENU</span>
                 </a>
             </div>
             <!-- Breadcrumb-->
@@ -171,7 +171,7 @@
                     <span></span>
                 </h2>
             </div>
-            <ul class="nav navbar-nav nav-flex-icons ml-auto">
+            <ul class="admin nav navbar-nav nav-flex-icons ml-auto">
                 <li class="nav-item">
                     <a class="nav-link waves-effect waves-light">
                         <i class="fa fa-envelope"></i>
@@ -208,7 +208,7 @@
     <!--/.Double navigation-->
 
     <!--Main Layout-->
-    <main>
+    <main class="animated fadeIn">
         <div class="container-fluid mt-3 row">
             <section id="advertisement-head" class="row col-12 d-flex align-content-center justify-content-middle mx-auto">
                 <h2 class="col-12 text-center">Advertise here</h2>
@@ -241,17 +241,26 @@
                                     <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.hugethumb.jpg?cdnv=3.34" class="img-fluid"
                                         alt="zoom" />
                                 </picture>
+                                
                                 <a href="#">
                                     <div class="mask waves-effect waves-light"></div>
                                 </a>
+                                
                             </div>
                             <!--/.Card image-->
 
+                            <!-- DEFAULT FOR VIDEO POSTS UNLESS "VIDEO IN BODY CHECK" -->
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM" allowfullscreen></iframe>
+                            </div>
+                            <!--/ DEFAULT FOR VIDEO POSTS UNLESS "VIDEO IN BODY CHECK" -->
+                            
                             <!--Card content-->
                             <div class="card-body">
                                 <!--Title-->
                                 <h4 class="card-title post-title wow fadeIn">
                                     <strong>Lorem ipsum dolor sit amet</strong>
+                                    <time datetime="2018-02-14 20:00" id="date-posted">02/14/2018</time>
                                 </h4>
                                 <hr>
                                 <!--Text-->
@@ -259,17 +268,17 @@
                                     totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
                                     vitae dicta sunt explicabo.</p>
 
-                                <!--Grid row-->
-                                <div class="row mx-4 mt-3 wow fadeInUp">
+                                <!--POST BODY-->
+                                <div id="post-body" class="row mx-4 mt-3 wow fadeIn">
 
-                                    <p class="dark-grey-text article">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                                         ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                                         ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
                                         reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
                                         sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
                                         id est laborum.</p>
 
-                                    <h5 class="mt-3 mb-4">
+                                    <h5>
                                         <strong>Lorem ipsum dolor sit amet</strong>
                                     </h5>
 
@@ -279,56 +288,19 @@
                                         sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
                                         voluptatem sequi nesciunt. Neque porro quisquam est.</p>
 
-                                    <blockquote class="blockquote mx-md-5 mx-1">
-                                        <p class="mb-0">"Lorem ipsum dolor sit amet, consectetur adipiscing elit..."</p>
+                                    <blockquote>
+                                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit..."</p>
                                     </blockquote>
 
-                                    <p class="dark-grey-text article"> Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
-                                        nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
-                                        qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem
-                                        eum fugiat quo voluptas nulla pariatur?</p>
-
-                                </div>
-                                <!--Grid row-->
-
-                                <!--Grid row-->
-                                <div class="row my-3 mx-3">
-
-                                    <!--Grid column-->
-                                    <div class="col-md-6 mb-3">
-
-                                        <img src="https://mdbootstrap.com/img/Photos/Others/square/19.jpg" class="img-fluid z-depth-1" alt="sample image">
-
+                                    <!-- IF "VIDEO IN BODY" CHECKED -->
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM" allowfullscreen></iframe>
                                     </div>
-                                    <!--Grid column-->
-
-                                    <!--Grid column-->
-                                    <div class="col-md-6">
-
-                                        <img src="https://mdbootstrap.com/img/Photos/Others/square/10.jpg" class="img-fluid z-depth-1" alt="sample image">
-
-                                    </div>
-                                    <!--Grid column-->
-
+                                    <!--/ IF "VIDEO IN BODY" CHECKED -->
                                 </div>
-                                <!--Grid row-->
+                                <!--/ POST BODY-->
 
-                                <!--Grid row-->
-                                <div class="row mx-4">
-
-                                    <p class="dark-grey-text article">Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
-                                        beatae vitae dicta sunt explicabo. Ut enim ad minima veniam, quis nostrum exercitationem
-                                        ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
-
-                                    <p class="dark-grey-text article mb-4">Omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
-                                        sunt explicabo. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-                                        suscipit laboriosam, nisi ut aliquid ex ea commodi.Perspiciatis unde omnis iste natus
-                                        error sit voluptatem accusantium doloremque.</p>
-
-                                </div>
-                                <!--Grid row-->
+                                
 
                                 <hr>
 
@@ -543,6 +515,7 @@
                     <hr>
                     <!--/ Card -->
                     <div class="card card-body pb-0">
+                        <!-- MAXNOTE: Random 5 of top 30 posts -->
                         <div class="single-post">
 
                             <!-- Grid row -->
@@ -570,7 +543,7 @@
 
                                     <div class="post-data">
                                         <p class="font-small grey-text mb-0">
-                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
+                                        <time datetime="2018-02-14 20:00" id="date-posted"><i class="fa fa-clock-o"></i> 02/14/2018</time>
                                     </div>
                                 </div>
                                 <!--/ Excerpt -->
@@ -580,318 +553,147 @@
 
                         <div class="single-post">
 
-                            <!-- Grid row -->
-                            <div class="row mb-4">
-                                <div class="col-5">
-
-                                    <!-- Image -->
-                                    <div class="view overlay hm-white-slight">
-
-                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
-                                            alt="zoom" />
-                                        <a>
-                                            <div class="mask waves-light waves-effect waves-light"></div>
-                                        </a>
+                                <!-- Grid row -->
+                                <div class="row mb-4">
+                                    <div class="col-5">
+    
+                                        <!-- Image -->
+                                        <div class="view overlay hm-white-slight">
+    
+                                            <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
+                                                alt="zoom" />
+                                            <a>
+                                                <div class="mask waves-light waves-effect waves-light"></div>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <!-- Excerpt -->
-                                <div class="col-7">
-                                    <h6 class="mt-0 font-small">
-                                        <a>
-                                            <strong>Title of the news</strong>
-                                        </a>
-                                    </h6>
-
-                                    <div class="post-data">
-                                        <p class="font-small grey-text mb-0">
-                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
+    
+                                    <!-- Excerpt -->
+                                    <div class="col-7">
+                                        <h6 class="mt-0 font-small">
+                                            <a>
+                                                <strong>Title of the news</strong>
+                                            </a>
+                                        </h6>
+    
+                                        <div class="post-data">
+                                            <p class="font-small grey-text mb-0">
+                                            <time datetime="2018-02-14 20:00" id="date-posted"><i class="fa fa-clock-o"></i> 02/14/2018</time>
+                                        </div>
                                     </div>
+                                    <!--/ Excerpt -->
                                 </div>
-                                <!--/ Excerpt -->
+                                <!--/ Grid row -->
                             </div>
-                            <!--/ Grid row -->
-                        </div>
 
-                        <div class="single-post">
+                            <div class="single-post">
 
-                            <!-- Grid row -->
-                            <div class="row mb-4">
-                                <div class="col-5">
-
-                                    <!-- Image -->
-                                    <div class="view overlay hm-white-slight">
-
-                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
-                                            alt="zoom" />
-                                        <a>
-                                            <div class="mask waves-light waves-effect waves-light"></div>
-                                        </a>
+                                    <!-- Grid row -->
+                                    <div class="row mb-4">
+                                        <div class="col-5">
+        
+                                            <!-- Image -->
+                                            <div class="view overlay hm-white-slight">
+        
+                                                <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
+                                                    alt="zoom" />
+                                                <a>
+                                                    <div class="mask waves-light waves-effect waves-light"></div>
+                                                </a>
+                                            </div>
+                                        </div>
+        
+                                        <!-- Excerpt -->
+                                        <div class="col-7">
+                                            <h6 class="mt-0 font-small">
+                                                <a>
+                                                    <strong>Title of the news</strong>
+                                                </a>
+                                            </h6>
+        
+                                            <div class="post-data">
+                                                <p class="font-small grey-text mb-0">
+                                                <time datetime="2018-02-14 20:00" id="date-posted"><i class="fa fa-clock-o"></i> 02/14/2018</time>
+                                            </div>
+                                        </div>
+                                        <!--/ Excerpt -->
                                     </div>
+                                    <!--/ Grid row -->
                                 </div>
 
-                                <!-- Excerpt -->
-                                <div class="col-7">
-                                    <h6 class="mt-0 font-small">
-                                        <a>
-                                            <strong>Title of the news</strong>
-                                        </a>
-                                    </h6>
+                                <div class="single-post">
 
-                                    <div class="post-data">
-                                        <p class="font-small grey-text mb-0">
-                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
+                                        <!-- Grid row -->
+                                        <div class="row mb-4">
+                                            <div class="col-5">
+            
+                                                <!-- Image -->
+                                                <div class="view overlay hm-white-slight">
+            
+                                                    <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
+                                                        alt="zoom" />
+                                                    <a>
+                                                        <div class="mask waves-light waves-effect waves-light"></div>
+                                                    </a>
+                                                </div>
+                                            </div>
+            
+                                            <!-- Excerpt -->
+                                            <div class="col-7">
+                                                <h6 class="mt-0 font-small">
+                                                    <a>
+                                                        <strong>Title of the news</strong>
+                                                    </a>
+                                                </h6>
+            
+                                                <div class="post-data">
+                                                    <p class="font-small grey-text mb-0">
+                                                    <time datetime="2018-02-14 20:00" id="date-posted"><i class="fa fa-clock-o"></i> 02/14/2018</time>
+                                                </div>
+                                            </div>
+                                            <!--/ Excerpt -->
+                                        </div>
+                                        <!--/ Grid row -->
                                     </div>
-                                </div>
-                                <!--/ Excerpt -->
-                            </div>
-                            <!--/ Grid row -->
-                        </div>
 
-                        <div class="single-post">
+                                    <div class="single-post">
 
-                            <!-- Grid row -->
-                            <div class="row mb-4">
-                                <div class="col-5">
+                                            <!-- Grid row -->
+                                            <div class="row mb-4">
+                                                <div class="col-5">
+                
+                                                    <!-- Image -->
+                                                    <div class="view overlay hm-white-slight">
+                
+                                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
+                                                            alt="zoom" />
+                                                        <a>
+                                                            <div class="mask waves-light waves-effect waves-light"></div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                
+                                                <!-- Excerpt -->
+                                                <div class="col-7">
+                                                    <h6 class="mt-0 font-small">
+                                                        <a>
+                                                            <strong>Title of the news</strong>
+                                                        </a>
+                                                    </h6>
+                
+                                                    <div class="post-data">
+                                                        <p class="font-small grey-text mb-0">
+                                                        <time datetime="2018-02-14 20:00" id="date-posted"><i class="fa fa-clock-o"></i> 02/14/2018</time>
+                                                    </div>
+                                                </div>
+                                                <!--/ Excerpt -->
+                                            </div>
+                                            <!--/ Grid row -->
+                                        </div>
 
-                                    <!-- Image -->
-                                    <div class="view overlay hm-white-slight">
+                                
 
-                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
-                                            alt="zoom" />
-                                        <a>
-                                            <div class="mask waves-light waves-effect waves-light"></div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- Excerpt -->
-                                <div class="col-7">
-                                    <h6 class="mt-0 font-small">
-                                        <a>
-                                            <strong>Title of the news</strong>
-                                        </a>
-                                    </h6>
-
-                                    <div class="post-data">
-                                        <p class="font-small grey-text mb-0">
-                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
-                                    </div>
-                                </div>
-                                <!--/ Excerpt -->
-                            </div>
-                            <!--/ Grid row -->
-                        </div>
-
-                        <div class="single-post">
-
-                            <!-- Grid row -->
-                            <div class="row mb-4">
-                                <div class="col-5">
-
-                                    <!-- Image -->
-                                    <div class="view overlay hm-white-slight">
-
-                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
-                                            alt="zoom" />
-                                        <a>
-                                            <div class="mask waves-light waves-effect waves-light"></div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- Excerpt -->
-                                <div class="col-7">
-                                    <h6 class="mt-0 font-small">
-                                        <a>
-                                            <strong>Title of the news</strong>
-                                        </a>
-                                    </h6>
-
-                                    <div class="post-data">
-                                        <p class="font-small grey-text mb-0">
-                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
-                                    </div>
-                                </div>
-                                <!--/ Excerpt -->
-                            </div>
-                            <!--/ Grid row -->
-                        </div>
-
-                        <div class="single-post">
-
-                            <!-- Grid row -->
-                            <div class="row mb-4">
-                                <div class="col-5">
-
-                                    <!-- Image -->
-                                    <div class="view overlay hm-white-slight">
-
-                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
-                                            alt="zoom" />
-                                        <a>
-                                            <div class="mask waves-light waves-effect waves-light"></div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- Excerpt -->
-                                <div class="col-7">
-                                    <h6 class="mt-0 font-small">
-                                        <a>
-                                            <strong>Title of the news</strong>
-                                        </a>
-                                    </h6>
-
-                                    <div class="post-data">
-                                        <p class="font-small grey-text mb-0">
-                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
-                                    </div>
-                                </div>
-                                <!--/ Excerpt -->
-                            </div>
-                            <!--/ Grid row -->
-                        </div>
-
-                        <div class="single-post">
-
-                            <!-- Grid row -->
-                            <div class="row mb-4">
-                                <div class="col-5">
-
-                                    <!-- Image -->
-                                    <div class="view overlay hm-white-slight">
-
-                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
-                                            alt="zoom" />
-                                        <a>
-                                            <div class="mask waves-light waves-effect waves-light"></div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- Excerpt -->
-                                <div class="col-7">
-                                    <h6 class="mt-0 font-small">
-                                        <a>
-                                            <strong>Title of the news</strong>
-                                        </a>
-                                    </h6>
-
-                                    <div class="post-data">
-                                        <p class="font-small grey-text mb-0">
-                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
-                                    </div>
-                                </div>
-                                <!--/ Excerpt -->
-                            </div>
-                            <!--/ Grid row -->
-                        </div>
-
-                        <div class="single-post">
-
-                            <!-- Grid row -->
-                            <div class="row mb-4">
-                                <div class="col-5">
-
-                                    <!-- Image -->
-                                    <div class="view overlay hm-white-slight">
-
-                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
-                                            alt="zoom" />
-                                        <a>
-                                            <div class="mask waves-light waves-effect waves-light"></div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- Excerpt -->
-                                <div class="col-7">
-                                    <h6 class="mt-0 font-small">
-                                        <a>
-                                            <strong>Title of the news</strong>
-                                        </a>
-                                    </h6>
-
-                                    <div class="post-data">
-                                        <p class="font-small grey-text mb-0">
-                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
-                                    </div>
-                                </div>
-                                <!--/ Excerpt -->
-                            </div>
-                            <!--/ Grid row -->
-                        </div>
-
-                        <div class="single-post">
-
-                            <!-- Grid row -->
-                            <div class="row mb-4">
-                                <div class="col-5">
-
-                                    <!-- Image -->
-                                    <div class="view overlay hm-white-slight">
-
-                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
-                                            alt="zoom" />
-                                        <a>
-                                            <div class="mask waves-light waves-effect waves-light"></div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- Excerpt -->
-                                <div class="col-7">
-                                    <h6 class="mt-0 font-small">
-                                        <a>
-                                            <strong>Title of the news</strong>
-                                        </a>
-                                    </h6>
-
-                                    <div class="post-data">
-                                        <p class="font-small grey-text mb-0">
-                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
-                                    </div>
-                                </div>
-                                <!--/ Excerpt -->
-                            </div>
-                            <!--/ Grid row -->
-                        </div>
-
-                        <div class="single-post">
-
-                            <!-- Grid row -->
-                            <div class="row mb-4">
-                                <div class="col-5">
-
-                                    <!-- Image -->
-                                    <div class="view overlay hm-white-slight">
-
-                                        <img src="http://tfncdn.thaflynation.com/images/uploaded/2017/03/9252_russell_westbrook.lg.jpg?cdnv=3.34" class="img-fluid z-depth-1"
-                                            alt="zoom" />
-                                        <a>
-                                            <div class="mask waves-light waves-effect waves-light"></div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- Excerpt -->
-                                <div class="col-7">
-                                    <h6 class="mt-0 font-small">
-                                        <a>
-                                            <strong>Title of the news</strong>
-                                        </a>
-                                    </h6>
-
-                                    <div class="post-data">
-                                        <p class="font-small grey-text mb-0">
-                                            <i class="fa fa-clock-o"></i> 18/08/2017</p>
-                                    </div>
-                                </div>
-                                <!--/ Excerpt -->
-                            </div>
-                            <!--/ Grid row -->
-                        </div>
+                        
                     </div>
                 </section>
                 <!--/ Section: You Might Like posts -->
@@ -1048,14 +850,7 @@
 
     <script type="text/javascript" src="js/custom.js"></script>
     <!-- endbuild -->
-    <script>
-        var facebookShareBtn = $('.btn-fb'),
-            twitterShareBtn = $('.btn-tw');
 
-        facebookShareBtn.on('click', function () {
-
-        });
-    </script>
 </body>
 
 </html>

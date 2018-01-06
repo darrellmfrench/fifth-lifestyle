@@ -4,3 +4,7 @@ $('.button-collapse').sideNav({
   });
 
   new WOW().init();
+
+  if ( $('#slide-out').hasClass('no-admin') ) {
+    $('.logo-wrapper img').attr('src', 'img/logo-red.svg')
+  }
